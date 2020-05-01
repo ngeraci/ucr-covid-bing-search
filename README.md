@@ -27,11 +27,11 @@ These are my rough notes from the setup process.
 
 ## Notes
 * Search term is set as a string on line 18. Our search is "site:ucr.edu covid-19". You'll have to edit this line if you want to search for something else.
-* Took about 11 minutes to run - retrived 48947 URLs
+* Took about 11 minutes to run - retrived 48947 URLs (but only 1085 unique)
+* Getting such a high proportion of duplicate URLs so far is a concern -- seems to be an [issue other people have also had](https://stackoverflow.com/questions/39216665/when-using-bing-search-api-how-do-you-omit-duplicate-results) with this API. So far I have separately deduplicated URLs before sending to University Archivist to load in Archive-It, but will look into tweaking search parameters and/or deduping as part of this script.
 * Free tier is 1000 transactions/month -- each transaction with this script gets 50 search results, so 50,000 results/month.
 	* [More pricing info](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/) 
 	* Azure free account gives $200 credit on signup
 	* UCR initial query fell just under 1 month free tier usage. Not sure yet how often we will re-run to pick up new URLs.
-* Getting substantial proportion of duplicate URLs so far -- seems to be an [issue other people have also had](https://stackoverflow.com/questions/39216665/when-using-bing-search-api-how-do-you-omit-duplicate-results) with this API. So far I have separately deduplicated URLs before sending to University Archivist to load in Archive-It, but will look into tweaking search parameters and/or deduping as part of this script.
 * Other potential features to add: command-line interface with search term as argument, option to download full JSON from Bing (not just URL), option to set outfile location (currently writes to same directory as script).
 * [Google Custom Search API](https://developers.google.com/custom-search/v1/overview) was another option I researched for this use case, but had daily limits on free tier query counts that seemed more challenging to work with (i.e. spreading out queries over multiple days)
