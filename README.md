@@ -27,7 +27,7 @@ These are my rough notes from the setup process.
 
 ## Notes
 * Search term is set as a string on line 18. Our search is "site:ucr.edu covid-19". You'll have to edit this line if you want to search for something else.
-* Took about 11 minutes to run - retrived 48947 URLs (but only 1085 unique)
+* Took about 11 minutes to run on 2020-04-30 - retrived 48947 URLs (but only 1085 unique - around 2%)
 * Getting such a high proportion of duplicate URLs so far is a concern -- seems to be an [issue other people have also had](https://stackoverflow.com/questions/39216665/when-using-bing-search-api-how-do-you-omit-duplicate-results) with this API. So far I have separately deduplicated URLs before sending to University Archivist to load in Archive-It, but will look into tweaking search parameters and/or deduping as part of this script.
 * Free tier is 1000 transactions/month -- each transaction with this script gets 50 search results, so 50,000 results/month.
 	* [More pricing info](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/) 
